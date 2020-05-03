@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\10_7_Segment_array.obj" 
+TO ".\Objects\10_7_Segment_array" 
+PRINT(".\Listings\10_7_Segment_array.m51") RAMSIZE(256) 
