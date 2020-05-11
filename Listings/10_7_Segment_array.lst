@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   10_7_SEGMENT_ARRAY                                                05/03/2020 15:48:07 PAGE 1   
+C51 COMPILER V9.60.0.0   10_7_SEGMENT_ARRAY                                                05/11/2020 11:57:57 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE 10_7_SEGMENT_ARRAY
@@ -8,20 +8,29 @@ COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 10_7_Segment_array.c OPTIMIZE(8,
 
 line level    source
 
-   1          #include<reg51.h>
-   2          unsigned char seg[15] = {0x00,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
-   3          unsigned int i, numbers;
-   4          void main(void)
-   5          {
-   6   1        while(1)
-   7   1        {
-   8   2        for(numbers=0;numbers<15;numbers++)
-   9   2          {
-  10   3        P2 = seg[numbers];
-  11   3        for(i=0;i<40000;i++);
-  12   3        }
-  13   2        }
-  14   1      }
+   1          /*  Author    :   L.Boaz
+   2            Email id  :   laxsam89@gmail.com
+   3            phone     : +91 95972 91816
+   4            hackster  : https://www.hackster.io/boaz */
+   5          
+   6          #include<reg51.h>
+   7          
+   8          // seg[15] is an array contains the character patterns from 0 to 9 and A to F
+   9          unsigned char seg[15] = {0x00,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x7f,0x6f,0x77,0x7c,0x39,0x5e,0x79,0x71};
+  10          unsigned int i, numbers;
+  11          
+  12          
+  13          void main(void)
+  14          {
+  15   1        while(1)                                // Run always
+  16   1        {
+  17   2        for(numbers=0;numbers<15;numbers++)
+  18   2          {
+  19   3        P2 = seg[numbers];                      //  Pass the content of seg[] array for each iterations
+  20   3        for(i=0;i<40000;i++);                   //  Few sec time is elapsed
+  21   3        }
+  22   2        }
+  23   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
